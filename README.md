@@ -95,7 +95,7 @@ Use (also see the app.js file):
 
 ```javascript
 var verifier = require('email-verify');
-var infoCodes = verifier.infoCodes;
+var infoCodes = verifier.verifyCodes;
 
 verifier.verify( 'anemail@domain.com', function( err, info ){
   if( err ) console.log(err);
