@@ -6,7 +6,7 @@ export interface ResultInfo {
 
 export function verify(email: string, callback: (err: Error, info: ResultInfo) => void): void;
 
-export async function verifyAsync(email: string): ResultInfo;
+export function verifyAsync(email: string): Promise<ResultInfo>;
 
 export enum verifyCodes {
     finishedVerification = 1,
