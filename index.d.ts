@@ -4,9 +4,18 @@ export interface ResultInfo {
     info: string;
 }
 
-export function verify(email: string, callback: (err: Error, info: ResultInfo) => void): void;
+export interface VerifyOptions {
+    port: number;
+    sender: string;
+    timeout: number;
+    fqdn: string;
+    dns: string;
+    ignore: number;
+}
 
-export function verifyAsync(email: string): Promise<ResultInfo>;
+export function verify(email: string, options: VerifyOptions, callback: (err: Error, info: ResultInfo) => void): void;
+
+export function verifyAsync(email: string, options?: VerifyOptions): Promise<ResultInfo>;
 
 export enum verifyCodes {
     finishedVerification = 1,
