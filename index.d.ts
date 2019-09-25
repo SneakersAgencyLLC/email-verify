@@ -1,10 +1,12 @@
-interface ResultInfo {
+export interface ResultInfo {
     success: boolean;
     code: verifyCodes;
     info: string;
 }
 
 export function verify(email: string, callback: (err: Error, info: ResultInfo) => void): void;
+
+export async function verifyAsync(email: string): ResultInfo;
 
 export enum verifyCodes {
     finishedVerification = 1,
